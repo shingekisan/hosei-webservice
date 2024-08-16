@@ -1,0 +1,61 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">div { display: flex; }</style>
+  <title>top</title>
+</head>
+
+<body>
+  <span>名前&emsp;&emsp;</span>
+  <input type="text" class="input-text1" /><br>
+  <span>誕生日&emsp;</span>
+  <input type="text" class="input-text2" /><br>
+  <span>電話番号</span>
+  <input type="text" class="input-text3" /><br>
+  <span>キー&emsp;&emsp;</span>
+  <input type="text" class="input-text4" />
+  <button class="send-button1">送信</button><br>
+  <span>削除キー</span>
+  <input type="text" class="input-text5" />
+  <button class="delete-button1">削除</button><br>
+  <button class="deleteAll-button1">すべて削除</button>
+<div>
+  <ul class="user-list">
+    <% for (const [user,key] of users) { %>
+      <li class="user-name <%= key %>" ><%= user %></li>
+    <% } %>
+  </ul>
+
+  <ul class="day-list">
+    <% for (const [day,key] of days) { %>
+      <li class="user-birthday <%= key %>"><%= day %></li>
+    <% } %>
+  </ul>
+
+  <ul class="tel-list">
+    <% for (const [tel,key] of tels) { %>
+      <li class="user-number <%= key %>"><%= tel %></li>
+    <% } %>
+  </ul>
+
+  <ul class="key-list">
+    <% for (const [key1,key2] of keys) { %>
+      <li class="user-key <%= key2 %>"><%= key1 %></li>
+    <% } %>
+  </ul>
+  
+</div>
+
+
+
+  
+  
+  <script src="/static/index.js" defer></script>
+</body>
+
+</html>
+
